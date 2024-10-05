@@ -1,0 +1,22 @@
+<div class="container mt-5">
+  <div class="row">
+    <div class="col-md-6">
+      <canvas
+        baseChart
+        [datasets]="lineChartData"
+        [labels]="lineChartLabels"
+        [options]="lineChartOptions"
+        chartType="line">
+      </canvas>
+    </div>
+    <div class="col-md-6 mt-5 mt-md-0">
+      <canvas
+        baseChart
+        [datasets]="pieChartData"
+        [labels]="pieChartLabels"
+        [options]="pieChartOptions"
+        chartType="pie">
+      </canvas>
+    </div>
+  </div>
+</div>

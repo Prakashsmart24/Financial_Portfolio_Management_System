@@ -1,0 +1,30 @@
+<div class="container mt-5">
+<h3 class="text-center">{{formTitle}}</h3>
+  <form [formGroup]="investmentForm" (ngSubmit)="onSubmit()">
+    <div class="mb-3">
+      <label for="assetType" class="form-label">Asset Type</label>
+      <input type="text" class="form-control" id="assetType" formControlName="assetType" required>
+      <div class="text-danger" *ngIf="investmentForm.get('assetType')?.invalid && investmentForm.get('assetType')?.touched">
+        Asset Type is required.
+      </div>
+    </div>
+
+    <div class="mb-3">
+      <label for="quantity" class="form-label">Quantity</label>
+      <input type="number" class="form-control" id="quantity" formControlName="quantity" required>
+      <div class="text-danger" *ngIf="investmentForm.get('quantity')?.invalid && investmentForm.get('quantity')?.touched">
+        Quantity is required.
+      </div>
+    </div>
+
+    <div class="mb-3">
+      <label for="purchasePrice" class="form-label">Purchase Price</label>
+      <input type="number" class="form-control" id="purchasePrice" formControlName="purchasePrice" required>
+      <div class="text-danger" *ngIf="investmentForm.get('purchasePrice')?.invalid && investmentForm.get('purchasePrice')?.touched">
+        Purchase Price is required.
+      </div>
+    </div>
+
+    <button type="submit" class="btn btn-primary" [disabled]="investmentForm.invalid">Submit</button>
+  </form>
+</div>
